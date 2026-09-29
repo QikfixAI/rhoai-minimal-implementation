@@ -17,7 +17,7 @@ This set of `YAML` and `SH` files will allow you to, easily achieve the goals be
   - redhatai/ministral-3-3b-instruc
   - tinyllama (from Quay.io)
   - deepseek-r1-distill-qwen-15b (from S3 local bucket)
-- Also easily `Enable/Disable` the `GenAI Studio`
+- Also easily `Enable/Disable` some features
 
 ## How this works?
 
@@ -32,6 +32,13 @@ Access the folder
 ```
 cd rhoai-minimal-implementation
 ```
+
+Here, you can pick the version of your current RHOAI. At this moment, you can see that this repo is covering some versions, as presented below
+  - v2.2x
+  - v3.4
+  - v3.5
+
+Access the respective folder, and keep moving
 
 To Enable `GenAI Studio`, proceed as below:
 ```
@@ -57,23 +64,54 @@ oc delete -f . -R
 
 Here, you can see how the files are structured
 ```
-├── 00-dsc_project
-│   └── demo_project.yaml
-├── 01-hw_profile
-│   ├── hw_profile_1gpu.yaml
-│   └── hw_profile_2gpu.yaml
-├── 02-S3
-│   └── s4.yaml
-├── 03-llm_deployment
-│   ├── deepseek-r1-distill-qwen-15b.yaml
-│   ├── redhataigranite-33-8b-instruct_inf_serving_runtime.yaml
-│   ├── redhataillama-31-8b-instruct_inf_serving_runtime.yaml
-│   ├── redhataiministral-3-3b-instruct_inf_serving_runtime.yaml
-│   └── tinyllama_inf_serving_runtime.yaml
-├── disable_genai.sh
-├── enable_genai.sh
 ├── LICENSE
-└── README.md
+├── README.md
+├── v2.x
+│   ├── 00-dsc_project
+│   │   └── demo_project.yaml
+│   ├── 01-hw_profile
+│   │   └── hw_accelerator.yaml
+│   ├── 02-S3
+│   │   └── s4.yaml
+│   ├── 03-llm_deployment
+│   │   └── tinyllama_inf_serving_runtime_raw.yaml
+│   ├── disable_hw_profile.sh
+│   ├── enable_hw_profile.sh
+│   └── README.md
+├── v3.4
+│   ├── 00-dsc_project
+│   │   └── demo_project.yaml
+│   ├── 01-hw_profile
+│   │   ├── hw_profile_1gpu.yaml
+│   │   └── hw_profile_2gpu.yaml
+│   ├── 02-S3
+│   │   └── s4.yaml
+│   ├── 03-llm_deployment
+│   │   ├── deepseek-r1-distill-qwen-15b.yaml
+│   │   ├── redhataigranite-33-8b-instruct_inf_serving_runtime.yaml
+│   │   ├── redhataillama-31-8b-instruct_inf_serving_runtime.yaml
+│   │   ├── redhataiministral-3-3b-instruct_inf_serving_runtime.yaml
+│   │   └── tinyllama_inf_serving_runtime.yaml
+│   ├── disable_genai.sh
+│   ├── enable_genai.sh
+│   └── README.md
+└── v3.5
+    ├── 00-dsc_project
+    │   └── demo_project.yaml
+    ├── 01-hw_profile
+    │   ├── hw_profile_1gpu.yaml
+    │   └── hw_profile_2gpu.yaml
+    ├── 02-S3
+    │   └── s4.yaml
+    ├── 03-llm_deployment
+    │   ├── deepseek-r1-distill-qwen-15b.yaml
+    │   ├── redhataigranite-33-8b-instruct_inf_serving_runtime.yaml
+    │   ├── redhataillama-31-8b-instruct_inf_serving_runtime.yaml
+    │   ├── redhataiministral-3-3b-instruct_inf_serving_runtime.yaml
+    │   └── tinyllama_inf_serving_runtime.yaml
+    ├── disable_genai.sh
+    ├── enable_genai.sh
+    └── README.md
 ```
 
 ## Feedback/Questions/Concerns

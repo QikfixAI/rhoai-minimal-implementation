@@ -1,0 +1,27 @@
+apiVersion: infrastructure.opendatahub.io/v1
+kind: HardwareProfile
+metadata:
+  annotations:
+    opendatahub.io/display-name: 1GPU
+  name: 1gpu
+  namespace: redhat-ods-applications
+spec:
+  identifiers:
+  - defaultCount: 1
+    displayName: CPU
+    identifier: cpu
+    maxCount: 4
+    minCount: 1
+    resourceType: CPU
+  - defaultCount: 4Gi
+    displayName: Memory
+    identifier: memory
+    maxCount: 8Gi
+    minCount: 2Gi
+    resourceType: Memory
+  - defaultCount: 1
+    displayName: GPU
+    identifier: nvidia.com/gpu
+    maxCount: 1
+    minCount: 1
+    resourceType: Accelerator
