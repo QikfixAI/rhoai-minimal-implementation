@@ -1,16 +1,16 @@
 apiVersion: v1
 data:
-  URI: b2NpOi8vcmVnaXN0cnkucmVkaGF0LmlvL3JoYWkvbW9kZWxjYXItZ3Jhbml0ZS0zLTMtOGItaW5zdHJ1Y3Q6bGF0ZXN0
+  URI: b2NpOi8vcmVnaXN0cnkucmVkaGF0LmlvL3JoZWxhaTEvbW9kZWxjYXItbGxhbWEtMy0xLThiLWluc3RydWN0OjEuNQ==
 kind: Secret
 metadata:
   annotations:
     opendatahub.io/connection-hidden: "true"
     opendatahub.io/connection-type-protocol: uri
     opendatahub.io/connection-type-ref: uri-v1
-    openshift.io/display-name: secret-0tzal9
+    openshift.io/display-name: secret-8rv9f9
   labels:
     opendatahub.io/dashboard: "true"
-  name: secret-0tzal9
+  name: secret-8rv9f9
   namespace: demo
 type: Opaque
 ---
@@ -21,6 +21,7 @@ metadata:
     opendatahub.io/apiProtocol: REST
     opendatahub.io/recommended-accelerators: '["nvidia.com/gpu"]'
     opendatahub.io/runtime-version: v0.18.0
+#    opendatahub.io/runtime-version: v0.24.0
     opendatahub.io/serving-runtime-scope: global
     opendatahub.io/template-display-name: vLLM NVIDIA GPU ServingRuntime for KServe
     opendatahub.io/template-name: vllm-cuda-runtime-template
@@ -28,7 +29,7 @@ metadata:
   generation: 1
   labels:
     opendatahub.io/dashboard: "true"
-  name: redhataigranite-33-8b-instruct
+  name: redhataillama-31-8b-instruct
   namespace: demo
 spec:
   annotations:
@@ -62,21 +63,20 @@ kind: InferenceService
 metadata:
   annotations:
     modelFormat: vLLM
-    opendatahub.io/connections: secret-0tzal9
+    opendatahub.io/connections: secret-8rv9f9
     opendatahub.io/hardware-profile-name: 2gpu
     opendatahub.io/hardware-profile-namespace: redhat-ods-applications
     opendatahub.io/model-type: generative
     openshift.io/description: ""
-    openshift.io/display-name: RedHatAI/granite-3.3-8b-instruct
+    openshift.io/display-name: RedHatAI/Llama-3.1-8B-Instruct
     security.opendatahub.io/enable-auth: "false"
     serving.kserve.io/deploymentMode: Standard
     serving.kserve.io/stop: "false"
-  generation: 1
   labels:
     networking.kserve.io/visibility: exposed
     opendatahub.io/dashboard: "true"
     opendatahub.io/genai-asset: "true"
-  name: redhataigranite-33-8b-instruct
+  name: redhataillama-31-8b-instruct
   namespace: demo
 spec:
   predictor:
@@ -104,6 +104,6 @@ spec:
           cpu: "1"
           memory: 4Gi
           nvidia.com/gpu: "2"
-      runtime: redhataigranite-33-8b-instruct
-      storageUri: oci://registry.redhat.io/rhai/modelcar-granite-3-3-8b-instruct:latest
+      runtime: redhataillama-31-8b-instruct
+      storageUri: oci://registry.redhat.io/rhelai1/modelcar-llama-3-1-8b-instruct:1.5
     timeout: 30

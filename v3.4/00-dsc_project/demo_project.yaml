@@ -1,0 +1,9 @@
+apiVersion: project.openshift.io/v1
+kind: Project
+metadata:
+  annotations:
+    openshift.io/display-name: demo
+  labels:
+    kubernetes.io/metadata.name: demo
+    opendatahub.io/dashboard: "true"
+  name: demo

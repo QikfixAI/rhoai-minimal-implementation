@@ -1,0 +1,21 @@
+apiVersion: v1
+data:
+  AWS_ACCESS_KEY_ID: czRhZG1pbg==
+  AWS_DEFAULT_REGION: dXMtZWFzdC0x
+  AWS_S3_BUCKET: bXktYnVja2V0
+  AWS_S3_ENDPOINT: aHR0cDovL3M0LmtpbmcubGFiOjc0ODA=
+  AWS_SECRET_ACCESS_KEY: czRzZWNyZXQ=
+kind: Secret
+metadata:
+  annotations:
+    opendatahub.io/connection-type: s3
+    opendatahub.io/connection-type-protocol: s3
+    opendatahub.io/connection-type-ref: s3
+    openshift.io/description: S3 Compatible Storage
+    openshift.io/display-name: S4
+  labels:
+    opendatahub.io/dashboard: "true"
+    opendatahub.io/managed: "true"
+  name: s4
+  namespace: demo
+type: Opaque
